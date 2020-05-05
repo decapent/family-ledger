@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="Nexus.Cqrs" Version="2018.10.11.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Decapent.Ledger.Domain\Decapent.Ledger.Domain.csproj" />
+    <ProjectReference Include="..\Decapent.Ledger.Infrastructure\Decapent.Ledger.Infrastructure.csproj" />
+  </ItemGroup>
+
+
+</Project>

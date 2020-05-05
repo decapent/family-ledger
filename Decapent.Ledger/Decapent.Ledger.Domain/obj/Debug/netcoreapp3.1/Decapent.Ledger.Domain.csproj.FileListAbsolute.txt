@@ -1,0 +1,9 @@
+D:\dev\family-ledger\Decapent.Ledger\Decapent.Ledger.Domain\bin\Debug\netcoreapp3.1\Decapent.Ledger.Domain.deps.json
+D:\dev\family-ledger\Decapent.Ledger\Decapent.Ledger.Domain\bin\Debug\netcoreapp3.1\Decapent.Ledger.Domain.dll
+D:\dev\family-ledger\Decapent.Ledger\Decapent.Ledger.Domain\obj\Debug\netcoreapp3.1\Decapent.Ledger.Domain.csprojAssemblyReference.cache
+D:\dev\family-ledger\Decapent.Ledger\Decapent.Ledger.Domain\obj\Debug\netcoreapp3.1\Decapent.Ledger.Domain.AssemblyInfoInputs.cache
+D:\dev\family-ledger\Decapent.Ledger\Decapent.Ledger.Domain\obj\Debug\netcoreapp3.1\Decapent.Ledger.Domain.AssemblyInfo.cs
+D:\dev\family-ledger\Decapent.Ledger\Decapent.Ledger.Domain\bin\Debug\netcoreapp3.1\Decapent.Ledger.Domain.pdb
+D:\dev\family-ledger\Decapent.Ledger\Decapent.Ledger.Domain\obj\Debug\netcoreapp3.1\Decapent.Ledger.Domain.csproj.CoreCompileInputs.cache
+D:\dev\family-ledger\Decapent.Ledger\Decapent.Ledger.Domain\obj\Debug\netcoreapp3.1\Decapent.Ledger.Domain.dll
+D:\dev\family-ledger\Decapent.Ledger\Decapent.Ledger.Domain\obj\Debug\netcoreapp3.1\Decapent.Ledger.Domain.pdb

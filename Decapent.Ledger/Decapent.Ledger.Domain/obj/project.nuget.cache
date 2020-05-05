@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "5WhoT/q0JAT2HnJFXmYaLFQDHxTXjZl2alUjVGqq+dr9f6j8P+sPxrT+r4nGW5IaDXyaoOyUV7c7PKrG6xaxqQ==",
+  "success": true,
+  "projectFilePath": "D:\\dev\\family-ledger\\Decapent.Ledger\\Decapent.Ledger.Domain\\Decapent.Ledger.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\laval\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\2.0.0\\microsoft.extensions.logging.abstractions.2.0.0.nupkg.sha512",
+    "C:\\Users\\laval\\.nuget\\packages\\nexus.cqrs\\2018.10.11.2\\nexus.cqrs.2018.10.11.2.nupkg.sha512"
+  ],
+  "logs": []
+}
