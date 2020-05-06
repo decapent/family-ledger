@@ -17,7 +17,17 @@ const config: webpack.Configuration = {
   module: {
     rules: [
       // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
-      { test: /\.tsx?$/, loader: "awesome-typescript-loader" }
+      { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
+      { test: /\.css$/, include: /node_modules/, loaders: ['style-loader', 'css-loader'] },
+      { test: /\.s[ac]ss$/i,
+        use: [
+          // Creates `style` nodes from JS strings
+          'style-loader',
+          // Translates CSS into CommonJS
+          'css-loader',
+          // Compiles Sass to CSS
+          'sass-loader',
+        ],}
     ]
   },
   plugins: [htmlPlugin]
