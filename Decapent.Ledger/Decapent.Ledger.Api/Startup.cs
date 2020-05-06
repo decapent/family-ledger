@@ -22,6 +22,9 @@ namespace Decapent.Ledger.Api
 {
     public class Startup
     {
+        readonly string AllowAllCORSPolicy = "AllowAllCORSPolicy";
+
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -33,6 +36,24 @@ namespace Decapent.Ledger.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddCors(options =>
+            {
+                //options.AddPolicy(AllowAllCORSPolicy,
+                //                  builder =>
+                //                  {
+                //                      builder.AllowAnyHeader()
+                //                             .AllowAnyMethod()
+                //                             .AllowAnyOrigin();
+                //                  });
+
+                options.AddDefaultPolicy(builder =>
+                    {
+                        builder.AllowAnyHeader()
+                                             .AllowAnyMethod()
+                                             .AllowAnyOrigin()
+                                             .AllowAnyHeader();
+                    });
+            });
 
             // Automapper config
             var mapperConfig = new MapperConfiguration(cfg =>
@@ -60,6 +81,7 @@ namespace Decapent.Ledger.Api
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthorization();
+            app.UseCors();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
