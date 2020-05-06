@@ -38,14 +38,6 @@ namespace Decapent.Ledger.Api
             services.AddControllers();
             services.AddCors(options =>
             {
-                //options.AddPolicy(AllowAllCORSPolicy,
-                //                  builder =>
-                //                  {
-                //                      builder.AllowAnyHeader()
-                //                             .AllowAnyMethod()
-                //                             .AllowAnyOrigin();
-                //                  });
-
                 options.AddDefaultPolicy(builder =>
                     {
                         builder.AllowAnyHeader()
