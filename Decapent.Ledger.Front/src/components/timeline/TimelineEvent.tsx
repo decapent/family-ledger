@@ -16,5 +16,6 @@ export const TimelineEvent = ({ model }: EventProps) =>
     >
         <h3 className="vertical-timeline-element-title">{model.Type}</h3>
         <h4 className="vertical-timeline-element-subtitle">{model.City}</h4>
+        <h4 className="vertical-timeline-element-subtitle">{model.Author}</h4>
         <p>{model.Description}</p>
     </VerticalTimelineElement>
