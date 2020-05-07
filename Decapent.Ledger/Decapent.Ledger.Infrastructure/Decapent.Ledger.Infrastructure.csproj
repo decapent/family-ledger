@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="ServiceStack.OrmLite.SqlServer" Version="5.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Decapent.Ledger.Domain\Decapent.Ledger.Domain.csproj" />
   </ItemGroup>
 

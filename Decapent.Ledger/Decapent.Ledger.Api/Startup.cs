@@ -10,6 +10,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Nexus.Cqrs.Queries.Bus;
 using Nexus.Cqrs.Queries.Handlers;
+using ServiceStack.Data;
+using ServiceStack.OrmLite;
+using ServiceStack.OrmLite.SqlServer;
 
 namespace Decapent.Ledger.Api
 {
@@ -26,6 +29,8 @@ namespace Decapent.Ledger.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            // CORS Policies
             services.AddCors(options =>
             {
                 options.AddDefaultPolicy(builder =>
@@ -36,6 +41,10 @@ namespace Decapent.Ledger.Api
                                              .AllowAnyHeader();
                     });
             });
+
+            // Database connection
+            OrmLiteConfig.DialectProvider = new SqlServerOrmLiteDialectProvider();
+            services.AddTransient(p => new OrmLiteConnectionFactory(this.Configuration.GetConnectionString("DefaultConnection")));
 
             // Automapper config
             var mapperConfig = new MapperConfiguration(cfg =>
@@ -49,7 +58,7 @@ namespace Decapent.Ledger.Api
             services.AddSingleton<IQueryBus, QueryBus>();
             services.AddTransient<IQueryHandler, AllLedgerEventQueryHandler>();
 
-            services.AddTransient<ILedgerEventRepository, MongoDBLedgerEventRepository>();
+            services.AddTransient<ILedgerEventRepository, SQLServerLedgerEventRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

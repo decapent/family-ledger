@@ -4,7 +4,7 @@ namespace Decapent.Ledger.Domain.LedgerEvents
 {
     public sealed class LedgerEvent
     {
-        public Guid Id { get; set; }
+        public long Id { get; set; }
         
         public DateTime Date { get; set; }
 
