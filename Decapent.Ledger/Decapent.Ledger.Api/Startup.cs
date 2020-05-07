@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AutoMapper;
 using Decapent.Ledger.Api.Dtos;
 using Decapent.Ledger.Domain.LedgerEvents;
@@ -9,12 +5,9 @@ using Decapent.Ledger.Domain.LedgerEvents.Queries;
 using Decapent.Ledger.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Nexus.Cqrs.Queries.Bus;
 using Nexus.Cqrs.Queries.Handlers;
 
@@ -22,9 +15,6 @@ namespace Decapent.Ledger.Api
 {
     public class Startup
     {
-        readonly string AllowAllCORSPolicy = "AllowAllCORSPolicy";
-
-
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
