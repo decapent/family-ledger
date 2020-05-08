@@ -18,7 +18,7 @@ namespace Decapent.Ledger.Infrastructure.Extensions
                 Description = model.Description,
                 Id = model.Id,
                 Type = Enum.Parse<LedgerEventType>(model.Type),
-                LedgerEntry = model.LedgerEntry,
+                LedgerEntry = model.LedgerImage,
                 LedgerPage = model.LedgerPage
             };
         }

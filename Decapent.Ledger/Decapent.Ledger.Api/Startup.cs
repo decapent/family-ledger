@@ -1,5 +1,6 @@
 using AutoMapper;
 using Decapent.Ledger.Api.Dtos;
+using Decapent.Ledger.Api.Dtos.Mappers;
 using Decapent.Ledger.Domain.LedgerEvents;
 using Decapent.Ledger.Domain.LedgerEvents.Queries;
 using Decapent.Ledger.Infrastructure;
@@ -13,6 +14,7 @@ using Nexus.Cqrs.Queries.Handlers;
 using ServiceStack.Data;
 using ServiceStack.OrmLite;
 using ServiceStack.OrmLite.SqlServer;
+using System;
 
 namespace Decapent.Ledger.Api
 {
@@ -36,9 +38,9 @@ namespace Decapent.Ledger.Api
                 options.AddDefaultPolicy(builder =>
                     {
                         builder.AllowAnyHeader()
-                                             .AllowAnyMethod()
-                                             .AllowAnyOrigin()
-                                             .AllowAnyHeader();
+                            .AllowAnyMethod()
+                            .AllowAnyOrigin()
+                            .AllowAnyHeader();
                     });
             });
 
@@ -49,7 +51,8 @@ namespace Decapent.Ledger.Api
             // Automapper config
             var mapperConfig = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<LedgerEvent, LedgerEventDto>();
+                cfg.CreateMap<LedgerEvent, LedgerEventDto>()
+                    .ForMember(dto => dto.LedgerEntry, opt => opt.MapFrom<LedgerEventResolver>());    
             });
 
             services.AddSingleton(mapperConfig.CreateMapper());

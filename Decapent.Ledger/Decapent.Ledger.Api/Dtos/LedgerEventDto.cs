@@ -14,7 +14,7 @@
 
         public string City { get; set; }
 
-        public byte[] LedgerEntry { get; set; }
+        public string LedgerEntry { get; set; }
 
         public int LedgerPage { get; set; }
     }

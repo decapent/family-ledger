@@ -28,6 +28,7 @@ namespace Decapent.Ledger.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
+            this._logger.LogInformation("LedgerEventController: Entering function scope GET");
             var query = new AllLedgerEventQuery();
             var allLedgerEvents = await this._queryBus.Execute<AllLedgerEventQuery, IEnumerable<LedgerEvent>>(query);
 
