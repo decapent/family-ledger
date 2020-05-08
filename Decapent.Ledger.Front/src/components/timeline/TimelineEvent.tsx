@@ -18,4 +18,5 @@ export const TimelineEvent = ({ model }: EventProps) =>
         <h4 className="vertical-timeline-element-subtitle">{model.City}</h4>
         <h4 className="vertical-timeline-element-subtitle">{model.Author}</h4>
         <p>{model.Description}</p>
+        <img src={`data:image/png;base64,${model.LedgerImage}`} />
     </VerticalTimelineElement>
