@@ -1,14 +1,9 @@
 import * as React from "react";
+import { VerticalTimeline } from "react-vertical-timeline-component";
 import LedgerEvent from "../../models/LedgerEvent";
-import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
-import { TimelineEvent } from "./TimelineEvent";
-import { EventType } from "../../models/EventType";
 import ILedgerService from "../../services/ILedgerService";
 import LedgerService from "../../services/LedgerService";
-import MockLedgerService from "../../services/MockLedgerService";
-import axios from 'axios';
-
-
+import { TimelineEvent } from "./TimelineEvent";
 
 export interface ITimelineState {
     readonly events: Array<LedgerEvent>
@@ -43,11 +38,9 @@ export default class Timeline extends React.Component<ITimelineProps, ITimelineS
 
     render() {
         if (!this.state.shouldRender) {
-            console.log("Ca arrive tu que c<est trop pauvre pour pas render ?");
             return (<div>Loading...</div>);
         }
 
-        console.log("Ya tu fucking de quoi dans ce array la ?", this.state.events);
         return (
             <div>
                 <VerticalTimeline>
