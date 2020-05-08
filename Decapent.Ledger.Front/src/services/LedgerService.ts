@@ -1,18 +1,21 @@
 import ILedgerService from "./ILedgerService";
 import LedgerEvent from "../models/LedgerEvent";
 import axios from 'axios';
-import { EventType } from "../models/EventType";
 
 export default class LedgerService implements ILedgerService {
     public async getEvents(): Promise<LedgerEvent[]> {
         return await axios.get(`https://localhost:44330/LedgerEvent`)
             .then(response => {
+                const dateOptions: Intl.DateTimeFormatOptions = {
+                    year: "numeric", month: "numeric", day: "numeric",
+                    hour: "2-digit", minute: "2-digit"
+                }
+
                 let events: Array<LedgerEvent> = []
                 for(let i = 0; i < response.data.length; i++) {
-                    debugger;
                     const event: LedgerEvent = {
                         Id: response.data[i].id,
-                        Date : response.data[i].date,
+                        Date : new Date(response.data[i].date).toLocaleString("en-ca", dateOptions),
                         Description: response.data[i].description,
                         Author: response.data[i].author,
                         City: response.data[i].city,
