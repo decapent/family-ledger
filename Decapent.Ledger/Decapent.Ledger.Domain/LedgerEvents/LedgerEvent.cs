@@ -16,7 +16,7 @@ namespace Decapent.Ledger.Domain.LedgerEvents
 
         public string City { get; set; }
 
-        public byte[] LedgerEntry { get; set; } 
+        public byte[] LedgerImage { get; set; } 
 
         public int LedgerPage { get; set; }
     }

@@ -8,7 +8,7 @@ namespace Decapent.Ledger.Api.Dtos.Mappers
     {
         public string Resolve(LedgerEvent source, LedgerEventDto destination, string destMember, ResolutionContext context)
         {
-            return Convert.ToBase64String(source.LedgerEntry);
+            return Convert.ToBase64String(source.LedgerImage);
         }
     }
 }

@@ -1,8 +1,7 @@
-﻿using Decapent.Ledger.Domain.LedgerEvents;
+﻿using System;
+
+using Decapent.Ledger.Domain.LedgerEvents;
 using Decapent.Ledger.Infrastructure.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Decapent.Ledger.Infrastructure.Extensions
 {
@@ -18,7 +17,7 @@ namespace Decapent.Ledger.Infrastructure.Extensions
                 Description = model.Description,
                 Id = model.Id,
                 Type = Enum.Parse<LedgerEventType>(model.Type),
-                LedgerEntry = model.LedgerImage,
+                LedgerImage = model.LedgerImage,
                 LedgerPage = model.LedgerPage
             };
         }

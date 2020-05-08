@@ -1,11 +1,9 @@
-﻿using ServiceStack.DataAnnotations;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
+
+using ServiceStack.DataAnnotations;
 
 namespace Decapent.Ledger.Infrastructure.Models
 {
-    [Alias("VW_AllLedgerEvents")]
     internal sealed class LedgerEventModel
     {
         [PrimaryKey]

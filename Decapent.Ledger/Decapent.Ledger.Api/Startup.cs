@@ -1,20 +1,22 @@
 using AutoMapper;
+
 using Decapent.Ledger.Api.Dtos;
 using Decapent.Ledger.Api.Dtos.Mappers;
 using Decapent.Ledger.Domain.LedgerEvents;
 using Decapent.Ledger.Domain.LedgerEvents.Queries;
 using Decapent.Ledger.Infrastructure;
+
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+
 using Nexus.Cqrs.Queries.Bus;
 using Nexus.Cqrs.Queries.Handlers;
-using ServiceStack.Data;
+
 using ServiceStack.OrmLite;
 using ServiceStack.OrmLite.SqlServer;
-using System;
 
 namespace Decapent.Ledger.Api
 {
@@ -39,8 +41,7 @@ namespace Decapent.Ledger.Api
                     {
                         builder.AllowAnyHeader()
                             .AllowAnyMethod()
-                            .AllowAnyOrigin()
-                            .AllowAnyHeader();
+                            .AllowAnyOrigin();
                     });
             });
 
@@ -52,7 +53,7 @@ namespace Decapent.Ledger.Api
             var mapperConfig = new MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<LedgerEvent, LedgerEventDto>()
-                    .ForMember(dto => dto.LedgerEntry, opt => opt.MapFrom<LedgerEventResolver>());    
+                    .ForMember(dto => dto.LedgerImage, opt => opt.MapFrom<LedgerEventResolver>());    
             });
 
             services.AddSingleton(mapperConfig.CreateMapper());
@@ -61,6 +62,7 @@ namespace Decapent.Ledger.Api
             services.AddSingleton<IQueryBus, QueryBus>();
             services.AddTransient<IQueryHandler, AllLedgerEventQueryHandler>();
 
+            // Registering repositories
             services.AddTransient<ILedgerEventRepository, SQLServerLedgerEventRepository>();
         }
 

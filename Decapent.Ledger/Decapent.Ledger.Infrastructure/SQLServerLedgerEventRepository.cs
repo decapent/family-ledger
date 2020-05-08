@@ -1,13 +1,15 @@
-﻿using Decapent.Ledger.Domain.LedgerEvents;
-using Decapent.Ledger.Infrastructure.Extensions;
-using Decapent.Ledger.Infrastructure.Models;
-using Microsoft.Extensions.Logging;
-using ServiceStack.OrmLite;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
+
+using Decapent.Ledger.Domain.LedgerEvents;
+using Decapent.Ledger.Infrastructure.Extensions;
+using Decapent.Ledger.Infrastructure.Models;
+
+using Microsoft.Extensions.Logging;
+
+using ServiceStack.OrmLite;
 
 namespace Decapent.Ledger.Infrastructure
 {
