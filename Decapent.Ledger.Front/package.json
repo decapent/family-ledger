@@ -14,7 +14,7 @@
   "dependencies": {
     "@types/react-router-dom": "^5.1.5",
     "@types/react-vertical-timeline-component": "^2.5.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "css-loader": "^3.5.3",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
